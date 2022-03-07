@@ -39,3 +39,4 @@ function setElementState(element) {
 
     setAsNotMarked(element);
 }
+
