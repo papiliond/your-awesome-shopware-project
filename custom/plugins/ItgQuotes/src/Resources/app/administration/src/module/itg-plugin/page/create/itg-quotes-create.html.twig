@@ -1,0 +1,24 @@
+{% block itg_quotes_create %}
+	<sw-page class="itg-quotes-create">
+		<template slot="smart-bar-actions">
+			<sw-button :routerlink="{name: 'itg.quotes.list'}">
+				{{ $t('itg-quotes.create.cancelButton') }}
+			</sw-button>
+
+			<sw-button-process :isloading="isLoading" :processsuccess="processSuccess" variant="primary" @process-finish="saveFinish" @click="onClickSave">
+				{{ $t('itg-quotes.create.saveButton') }}
+			</sw-button-process>
+		</template>
+		<template slot="content">
+			<sw-card-view>
+				<sw-card :isloading="isLoading">
+					<sw-select-field v-if="authors" v-model="author.name" :placeholder="$t('itg-quotes.create.nameFieldPlaceholder')" :label="$t('itg-quotes.create.nameFieldLabel')" validation="required">
+						<option v-for="author in authors">
+							{{ author.name }}
+						</option>
+					</sw-select-field>
+				</sw-card>
+			</sw-card-view>
+		</template>
+	</sw-page>
+{% endblock %}

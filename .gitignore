@@ -1,3 +1,5 @@
+/schema
+
 /vendor/
 /bin/vendor/
 
@@ -10,8 +12,6 @@
 !/config/jwt/.gitkeep
 /config/packages/local.yaml
 /config/packages/local.yml
-
-/custom/**/public
 
 /build/*
 !/build/artifacts/.gitkeep

@@ -1,31 +1,31 @@
 {
-    "name": "itg/itg-plugin",
-    "description": "Description for the plugin ItgPlugin",
+    "name": "itg/quotes",
+    "description": "Random quotes on the administration page",
     "version": "1.0.0",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "Shopware"
+            "name": "ITG"
         }
     ],
     "require": {
         "shopware/core": "6.4.*"
     },
     "extra": {
-        "shopware-plugin-class": "Itg\\ItgPlugin\\Example",
+        "shopware-plugin-class": "Itg\\Quotes\\ItgQuotes",
         "label": {
             "de-DE": "Der angezeigte lesbare Name für das Plugin",
-            "en-GB": "The fucking plugin"
+            "en-GB": "ITG Quotes"
         },
         "description": {
             "de-DE": "Beschreibung in der Administration für das Plugin",
-            "en-GB": "This is a plugin. The one that is fucking."
+            "en-GB": "This is a plugin. The one that gives you random quotes."
         }
     },
     "autoload": {
         "psr-4": {
-            "Itg\\ItgPlugin\\": "src/"
+            "Itg\\Quotes\\": "src/"
         }
     }
 }

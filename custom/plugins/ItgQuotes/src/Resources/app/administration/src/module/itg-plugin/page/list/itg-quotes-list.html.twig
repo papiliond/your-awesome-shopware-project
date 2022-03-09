@@ -1,0 +1,16 @@
+{% block itg_quotes_list %}
+	<sw-page class="itg-quotes-list">
+		<template slot="smart-bar-actions">
+			{% block itg_quotes_list_smarbar %}
+				<sw-button variant="primary" :router-link="{name: 'itg.quotes.create'}">
+					{{ $t('itg-quotes.list.createButton') }}
+				</sw-button>
+			{% endblock %}
+		</template>
+		<template slot="content">
+			{% block itg_quotes_list_content %}
+				<sw-entity-listing v-if="authors" :items="authors" :repository="itgQuotesAuthorRepository" :columns="columns"></sw-entity-listing>
+			{% endblock %}
+		</template>
+	</sw-page>
+{% endblock %}

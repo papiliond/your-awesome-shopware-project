@@ -1,0 +1,19 @@
+{
+    "itg-quotes": {
+        "general": {
+            "mainMenuItemGeneral": "ITG Quotes",
+            "descriptionTextModule": "Manage this custom module here"
+        },
+        "list": {
+            "authorColumnName": "Author name",
+            "createButton": "Add author"
+        },
+        "create": {
+            "cancelButton": "Cancel",
+            "saveButton": "Save",
+            "nameFieldLabel": "Author name",
+            "nameFieldPlaceholder": "Select an author...",
+            "errorTitle": "Error occured."
+        }
+    }
+}
