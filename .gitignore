@@ -1,4 +1,6 @@
 /schema
+/custom/
+!/custom/plugins/ItgQuotes
 
 /vendor/
 /bin/vendor/
@@ -33,6 +35,7 @@
 !/public/thumbnail/.gitkeep
 /public/plugins/*
 /public/assets/*
+/public/pwa
 
 /files/*
 /.docker-sync/
