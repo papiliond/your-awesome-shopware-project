@@ -1,0 +1,16 @@
+<!-- <plugin root>/src/Resources/app/administration/src/sw-dashboard-index-override/sw-dashboard-index.html.twig -->
+{% block sw_dashboard_index_content_intro_content_headline %}
+	<sw-card :isloading="loading" :hero="false" :large="false">
+		<q v-if="quote">
+			{{ quote.en }}
+		</q>
+		<span v-if="quote">{{ ` - ${quote.author}` }}</span>
+		<template v-slot:footer>
+			<div class="dashboard-widget-card-footer">
+				<span>ITG Quotes</span>
+				<img class="dashboard-widget-itg-logo" :src="'/itgquotes/static/itg-logo.png' | asset">
+			</div>
+		</template>
+	</sw-card>
+	{% parent %}
+{% endblock %}

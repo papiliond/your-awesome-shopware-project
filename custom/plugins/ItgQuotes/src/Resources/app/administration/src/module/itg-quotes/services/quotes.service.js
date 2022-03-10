@@ -1,8 +1,4 @@
 export default class QuotesService {
-    constructor(httpClient) {
-        this.httpClient = httpClient;
-    }
-
     getRandomQuote() {
         return fetch(
             "https://programming-quotes-api.herokuapp.com/Quotes/random",
@@ -19,9 +15,7 @@ export default class QuotesService {
                 }
             })
             .then((data) => {
-                // Random number between 0 and data length
-                const index = Math.floor(Math.random() * (data.length + 1));
-                return data[index];
+                return data;
             })
             .catch((error) => {
                 console.error("Couldn't fetch quote.", error);
@@ -30,7 +24,7 @@ export default class QuotesService {
 
     getQuote(author) {
         return fetch(
-            `https://programming-quotes-api.herokuapp.com/Author/${encodeURIComponent(
+            `https://programming-quotes-api.herokuapp.com/Quotes/Author/${encodeURIComponent(
                 author
             )}`,
             {
@@ -44,6 +38,10 @@ export default class QuotesService {
                 } else {
                     throw new Error("Response was not ok");
                 }
+            })
+            .then((data) => {
+                const index = Math.floor(Math.random() * data.length);
+                return data[index];
             })
             .catch((error) => {
                 console.error("Couldn't fetch quote.", error);
@@ -63,8 +61,13 @@ export default class QuotesService {
                 }
             })
             .then((data) => {
-                // { "Edsger W. Dijkstra": { "name": "Edsger W. Dijkstra", ... }} to [{name: "Edsger W. Dijkstra", ...}]
-                return Object.entries(data).map(([, value]) => value);
+                return (
+                    // Convert { "Edsger W. Dijkstra": { "name": "Edsger W. Dijkstra", ... }} to [{name: "Edsger W. Dijkstra", ...}]
+                    Object.entries(data)
+                        .map(([, value]) => value)
+                        // Sort to alphabetical order
+                        .sort((a, b) => (a.name >= b.name ? 1 : -1))
+                );
             })
             .catch((error) => {
                 console.error("Couldn't fetch authors.", error);

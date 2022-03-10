@@ -1,1 +1,1 @@
-import "./module/itg-plugin";
+import "./module/itg-quotes";

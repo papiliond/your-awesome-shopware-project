@@ -1,14 +1,7 @@
-import "./page/create";
-import "./page/list";
-import "./components/icon";
-import "./components/dashboard-widget";
+import "./pages";
+import "./components";
+import "./services";
 import enGB from "./snippet/en-GB";
-import QuotesService from "./services/quotes.service";
-
-Shopware.Service().register("quotes", () => {
-    const initContainer = Shopware.Application.getContainer("init");
-    return new QuotesService(initContainer.httpClient);
-});
 
 Shopware.Module.register("itg-quotes", {
     type: "plugin",

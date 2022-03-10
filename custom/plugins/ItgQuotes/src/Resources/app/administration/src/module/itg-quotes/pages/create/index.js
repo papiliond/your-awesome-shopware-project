@@ -23,7 +23,7 @@ Component.register("itg-quotes-create", {
         };
     },
     created() {
-        this.entity = this.itgQuotesAuthorRepository.create(
+        this.author = this.itgQuotesAuthorRepository.create(
             Shopware.Context.api
         );
         this.getAvailableAuthors();
